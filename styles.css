@@ -1,8 +1,13 @@
+@font-face {
+font-family: CustomFont;
+src: url('Dokument/fonts/Geostar-Regular.ttf') format("truetype");
+}
+
 h2 {
-font-family: fantasy;
-color: #ffa500;
+font-family: CustomFont;
+color: #ffa500;	
 }
 
 h1 {
-color: #ee82ee;
+	color:#ee82ee;
 }
