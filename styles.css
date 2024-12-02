@@ -1,6 +1,11 @@
 @font-face {
 font-family: CustomFont;
-src: url('Dokument/fonts/Geostar-Regular.ttf') format("truetype");
+src: url('Dokument/fonts/Geostar/Geostar-Regular.ttf') format("truetype");
+}
+
+@font-face {
+font-family: CustomFont2;
+src: url('Dokument/fonts/Bokor/Bokor-Regular.ttf') format("truetype");
 }
 
 h2 {
@@ -9,5 +14,6 @@ color: #ffa500;
 }
 
 h1 {
+	font-family: CustomFont2;
 	color:#ee82ee;
 }
