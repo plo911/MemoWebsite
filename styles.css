@@ -1,7 +1,9 @@
 body{
   background-image: url(Assets/Bilder/KeyboardBlue1.png);
   background-repeat: no-repeat;
-  background-color: green;
+  /*background-size: cover;*/
+  background-color: darkblue;
+  background-image-size: cover;
 }
 
 @font-face {
