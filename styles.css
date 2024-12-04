@@ -2,7 +2,7 @@ body{
   background-image: url(Assets/Bilder/KeyboardBlue1.png);
   background-repeat: no-repeat;
   /*background-size: cover;*/
-  background-size: cover;
+  background-size: ;
 }
 
 @font-face {
