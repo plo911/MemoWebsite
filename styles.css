@@ -3,7 +3,7 @@ body{
   background-repeat: no-repeat;
   /*background-size: cover;*/
   background-color: darkblue;
-  background-image: cover;
+  background: cover;
 }
 
 @font-face {
