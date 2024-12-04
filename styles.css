@@ -1,7 +1,8 @@
 body{
-  background-image: url(Assets/Bilder/KeyboardBlue.png);
+  background-image: url(Assets/Bilder/KeyboardBlue1.png);
   background-repeat: no-repeat;
-  background-size: 100.5vw;
+  background-size: cover;
+  background-color: darkblue;
 }
 
 @font-face {
@@ -28,8 +29,8 @@ transform: translateX(0.5vw);
 }
 
 .text2 {
-	/*font-family: CustomFont2;*/
-	/*color:#ee82ee;*/
+  /*font-family: CustomFont2;*/
+  /*color:#ee82ee;*/
  text-align: left;
  transform: translateY(-1.5vw);
  transform: translateX(0.5vw);
@@ -49,20 +50,22 @@ transform: translateX(0.5vw);
 button{
   background-color: yellow;
   border: none;
-  position: absolute;
-  transform: translate(-490%, -250%);
-  top: 40%;
-  left: 50%;
+  position: static;
+  transform: translate(-55vw, 11vw);
+  top: 10vw;
+  /*left: 50vw;*/
   font-size: 0.9vw;
   font-weight: bold;
-  padding: 7px;
+  padding: 6vw;
   width: 10vw;
+  height: 0vw;
 }
 
 button:hover{
+  position: static;
   font-family: CustomFont2;
   background-color: red; 
-  width: 10vw;
+  width: 5vw;
   height: 2vw;
-  transform: translate(-490%, -220%);
+  transform: translate(-48vw, 11vw);
 }
