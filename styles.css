@@ -1,79 +1,95 @@
 body {
-	margin: 0;
-	padding: 0;
-  background-color: black;
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
 
-#Background-ImageZ{
-  background-image: url('Assets/Bilder/KeyboardBlue1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  background-position: center center;
-}
-
-@font-face {
-font-family: CustomFont;
-src: url('Assets/fonts/Geostar/Geostar-Regular.ttf') format("truetype");
+#Background-ImageZ {
+    background-image: url('Assets/Bilder/KeyboardBlue1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
 }
 
 @font-face {
-font-family: CustomFont2;
-src: url('Assets/fonts/Bokor/Bokor-Regular.ttf') format("truetype");
+    font-family: CustomFont;
+    src: url('Assets/fonts/Geostar/Geostar-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: CustomFont2;
+    src: url('Assets/fonts/Bokor/Bokor-Regular.ttf') format("truetype");
 }
 
 .text {
-font-family: CustomFont;
-color: #ffa500;
-text-align: center;
-}
-
-.text{
-color: #ffa500;
-text-align: center;
-transform: translateY(1.5vh);
+    font-family: CustomFont;
+    color: #ffa500;
+    text-align: center;
+    transform: translateY(1.5vh);
 }
 
 .text2 {
- font-family: CustomFont2;
- color:#ee82ee;
- top: -100px;
- text-align: center center;
- /*width: 25vw;*/
- margin: 50px;
- color: white;
- padding: 10px;
+    font-family: CustomFont2;
+    color: #ee82ee;
+    top: -100px;
+    text-align: center;
+    /*width: 25vw;*/
+    margin: 50px;
+    color: white;
+    padding: 10px;
 }
 
 .center {
-  margin: 0;
-  position: absolute;
-  top: 98vh;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-button{
-  background-color: yellow;
-  border: none;
-  position: static;
-  transform: translate(-55vw, 11vw);
-  top: 10vw;
-  left: 50vw;*/
-  font-size: 0.9vw;
-  font-weight: bold;
-  padding: 6vw;
-  width: 15vw;
-  height: 0vw;
+button {
+    background-color: yellow;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 3px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*transition: all 0.3s ease;*/
 }
 
-button:hover{
-  position: static;
-  font-family: CustomFont2;
-  background-color: red; 
-  width: 5vw;
-  height: 2vw;
-  transform: translate(-48vw, 11vw);
+button:hover {
+    font-family: CustomFont2;
+    color: black;
+    background-color: #ffcc00;
+    padding: 13px 40px;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .text {
+        transform: translateY(5vh);
+    }
+
+    .center {
+        bottom: 10px;
+    }
+
+    .text {
+        font-size: 24px; /* Större storlek för datorer */
+    }
+
+    .text2 {
+        font-size: 18px; /* Större storlek för datorer */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .text {
+        font-size: 16px; /* Mindre storlek för mobiler */
+    }
+
+    .text2 {
+        font-size: 14px; /* Mindre storlek för mobiler */
+    }
 }
