@@ -15,7 +15,7 @@ This project is for a website describing me and my game projects.
 
 ## Contact
 If you have any questions or would like to get in touch, please feel free to contact me via:
-- Discord: **Unknifto**
+- Discord: **liwuv**
 - Email: erik8347@gmail.com(mailto:erik8347@gmail.com)
 
 I welcome any questions or collaboration opportunities!
