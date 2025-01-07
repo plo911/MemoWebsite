@@ -18,7 +18,7 @@ If you have any questions or would like to get in touch, please feel free to con
 - Discord: **liwuv**
 - Email: erik8347@gmail.com(mailto:erik8347@gmail.com)
 
-I see what I do about any questions or collaboration opportunities. 
+I can think about any questions or collaboration opportunities if it appears. 
 
 ## License
 This project is licensed under the plo911 Proprietary License. See the [LICENSE](LICENSE) file for more details.
