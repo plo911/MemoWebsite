@@ -1,7 +1,7 @@
 # MemoWebsite
 
 ## Description
-This project is for a website describing me and my game projects.
+A website that describing me and my game projects.
 
 ## Installation
 1. Click the **Code** button on the GitHub repository page.
