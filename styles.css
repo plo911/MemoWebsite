@@ -24,7 +24,7 @@ body {
 }
 
 .text {
-    font-family: CustomFont;
+    /*font-family: CustomFont;*/
     color: #ffa500;
     text-align: center;
     transform: translateY(1.5vh);
