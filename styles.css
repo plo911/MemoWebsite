@@ -24,14 +24,14 @@ body {
 }
 
 .text {
-    /*font-family: CustomFont;*/
+    font-family: CustomFont;
     color: #ffa500;
     text-align: center;
     transform: translateY(1.5vh);
 }
 
 .text2 {
-    font-family: CustomFont2;
+    /*font-family: CustomFont2;*/
     color: #ee82ee;
     top: -100px;
     text-align: center;
