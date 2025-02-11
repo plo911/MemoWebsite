@@ -28,7 +28,8 @@ body {
 .text {
     font-family: CustomFont;
     /*color: #ffa500;*/
-    color: #00e649;
+    /*color: #00e649;*/
+    color: black;
     text-align: center;
     transform: translateY(1.5vh);
 }
@@ -54,7 +55,8 @@ body {
 
 button {
     /*background-color: #9e00c9;*/
-    background-color: #00bd3c;
+    /*background-color: #00bd3c;*/
+    background-color: #008c2d;
     border: none;
     font-size: 1rem;
     padding: 10px 3px;
