@@ -1,7 +1,7 @@
 # MemoWebsite
 
 ## Description
-A website that describing me and my game projects.
+A website that describes me and my game projects.
 
 ## Installation
 1. Click the **Code** button on the GitHub repository page.
@@ -13,12 +13,16 @@ A website that describing me and my game projects.
 2. Locate the `index.html` file.
 3. Double-click on the `index.html` file to open the website in your default web browser.
 
+## License
+This project is licensed under the **plo911 Proprietary License**. See the [LICENSE](LICENSE) file for more details.
+
+### Important
+All images, assets, and files included in this project are protected under the same license. Unauthorized use, copying, or distribution is strictly prohibited without prior written consent from plo911.
+
 ## Contact
 If you have any questions or would like to get in touch, please feel free to contact me via:
-- Discord: **liwuv**
-- Email: erik8347@gmail.com(mailto:erik8347@gmail.com)
 
-I can think about any questions or collaboration opportunities if it appears. 
+- **Discord**: liwuv  
+- **Email**: [erik8347@gmail.com](mailto:erik8347@gmail.com)
 
-## License
-This project is licensed under the plo911 Proprietary License. See the [LICENSE](LICENSE) file for more details.
+I am open to questions or collaboration opportunities if they arise.
