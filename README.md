@@ -30,7 +30,7 @@ MemoWebsite is provided as-is, without any guarantees or warranties.
 
 ## Security
 
-For information about security policies and procedures, see the [Security](#security) file.
+For information about security policies and procedures, see the [Security](./SECURITY.md) file.
 
 ## Contact
 
