@@ -10,7 +10,7 @@ You are **not allowed** to:
 - Share MemoWebsite publicly (e.g., on social media or public platforms).
 - Use MemoWebsite for commercial purposes without prior written consent from plo911.
 
-For full details, see the [License](#license) section below.
+For full details, see the [Security](#security), and also [License](#license) section below.
 
 ## License
 This project is licensed under the **plo911 Proprietary License**.  
