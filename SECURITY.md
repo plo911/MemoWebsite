@@ -6,9 +6,9 @@ currently being supportded with security updates I think.
 | Version | Supported          | 
 | ------- | ------------------ | 
 | 5.1.x   | :white_check_mark: | 
-| 5.0.x   | :x:                | 
+| 5.0.x   | :white_check_mark: | 
 | 4.0.x   | :white_check_mark: | 
-| < 4.0   | :x:                | 
+| < 4.0   | :white_check_mark: | 
 Reporting a Vulnerability
  
 We take security seriously and appreciate your help in keeping our project safe.  If you believe you have discovered a security vulnerability in our project, please disclose it responsibly by following these steps: 
