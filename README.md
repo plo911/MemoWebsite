@@ -27,5 +27,4 @@ MemoWebsite is provided as-is, without any guarantees or warranties.
 ## Contact
 If you have any questions or need permission for commercial use, feel free to reach out:
 - Email: [erik8347@gmail.com](mailto:erik8347@gmail.com)
-- Portfolio: [My portfolio](https://plo911.github.io/MemoWebsite/)
 
