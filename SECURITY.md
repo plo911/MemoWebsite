@@ -11,10 +11,10 @@ currently being supportded with security updates I think.
 | < 4.0   | :x:                | 
 Reporting a Vulnerability
  
-We take security seriously and appreciate your help in keeping our project safe.  If you believe you have discovered a security vulnerability in our project, please disclose it responsibly by following these steps: 
+I take security seriously and appreciate your help in keeping our project safe.  If you believe you have discovered a security vulnerability in our project, please disclose it responsibly by following these steps: 
  
  
-Report privately:  Do not publicly disclose the vulnerability. Instead, send a detailed report to [erik8347@gmail.com].  This allows us to address the issue before it can be exploited. 
+Report privately:  Do not publicly disclose the vulnerability. Instead, send a detailed report to [erik8347@gmail.com].  This allows me to address the issue before it can be exploited. 
  
  
 Provide comprehensive information: Your report should include: 
@@ -28,10 +28,10 @@ Impact: Describe the potential impact of the vulnerability.
 Suggested solution (optional): If you have a suggestion for a fix, please include it.
 
    
-Acceptance/Rejection: If the reported issue is confirmed as a vulnerability, we will work to fix it promptly. We will keep you informed of the status of the fix and release a security advisory once the fix is deployed.  If the reported issue is not considered a vulnerability, we will explain our reasoning. 
+Acceptance/Rejection: If the reported issue is confirmed as a vulnerability, I'll work to fix it promptly. I'll keep you informed of the status of the fix and release a security advisory once the fix is deployed.  If the reported issue is not considered a vulnerability, I'll explain my reasoning. 
  
  
-Disclosure Coordination: We ask that you refrain from publicly disclosing the vulnerability until we have released a fix and published a security advisory. This allows us to ensure that all users are protected.  We will work with you to coordinate a responsible disclosure timeline. 
+Disclosure Coordination: We ask that you refrain from publicly disclosing the vulnerability until I have released a fix and published a security advisory. This allows me to ensure that all users are protected.  I will work with you to coordinate a responsible disclosure timeline. 
  
  
-We value your contribution to the security of our project and appreciate your responsible disclosure.  Thank you for your help.
+I value your contribution to the security of my project and appreciate your responsible disclosure.  Thank you for your help.
