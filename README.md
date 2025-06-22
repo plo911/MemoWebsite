@@ -35,4 +35,4 @@ For information about security policies and procedures, see the [Security](./SEC
 ## Contact
 
 If you have any questions or need permission for commercial use, reach to:
-- Email: [erik8347@gmail.com](mailto:erik8347@gmail.com)
+- Email: [repi2.vik@gmail.com](mailto:repi2.vik@gmail.com)
