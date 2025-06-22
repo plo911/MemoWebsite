@@ -14,7 +14,7 @@ Reporting a Vulnerability
 I take security seriously and appreciate your help in keeping our project safe.  If you believe you have discovered a security vulnerability in our project, please disclose it responsibly by following these steps: 
  
  
-Report privately:  Do not publicly disclose the vulnerability. Instead, send a detailed report to [erik8347@gmail.com].  This allows me to address the issue before it can be exploited. 
+Report privately:  Do not publicly disclose the vulnerability. Instead, send a detailed report to [repi2.vik@gmail.com].  This allows me to address the issue before it can be exploited. 
  
  
 Provide comprehensive information: Your report should include: 
