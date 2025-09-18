@@ -6,10 +6,10 @@ MemoWebsite is a project created by plo911. This README provides an overview of 
 
 You are free to:
 - Use MemoWebsite for personal and private purposes.
-- Copy, modify, and share MemoWebsite as long as it's strictly for personal and private use.
+- Copy and modify, and share MemoWebsite as long as it's strictly for personal and private use.
+- share on sociala media.
 
 You are **not allowed** to:
-- Share MemoWebsite publicly (e.g., on social media or public platforms).
 - Use MemoWebsite for commercial purposes without prior written consent from plo911.
 
 For full details, see the [License](#license) section below.
