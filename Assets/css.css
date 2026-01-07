@@ -1,0 +1,15 @@
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(30px); }
+50% { opacity: 1; transform: translateY(-10px); }
+100% { opacity: 0; transform: translateY(0); }
+}
+
+.hero {
+  animation-name: fade-in;
+  animation-duration: 1.50s;
+  animation-delay: 0.40s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}

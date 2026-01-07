@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css.css">
+  <title>Glassplitter Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /*box-sizing: border-box;*/
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+      /*background: linear-gradient(135deg, #00ffff 0%, #8600b3 100%);*/
+      background: linear-gradient(135deg, #8600b3 0%, #00ffff 100%);
+      /*background-image: url('');*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .glass-container {
+      /*position: relative;*/
+      position: static;
+      /*width: 400px;*/
+      /*height: 250px;*/
+      animation: fade-out 0.5s ease-out 2s forwards;
+      /*opacity: 0%;*/
+      width: 1wv;
+      height: 1wv;
+    }
+
+    .glass-panel {
+      /*position: absolute;*/
+      position: center;
+      /*width: 100px;*/
+      width: 100vw;
+      height: 50vw;
+      /*background: rgba(255, 255, 255, 0.1);*/
+      backdrop-filter: blur(10px);
+      /*border-radius: 2px;*/
+      /*border: 1px solid rgba(255, 255, 255, 0.2);*/
+      /*box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);*/
+      /*opacity: 0%;*/
+    }
+
+    .shard {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      backdrop-filter: blur(5px);
+      border-radius: 2px;
+      opacity: 25%;
+    }
+
+    .shard:nth-child(1) {
+      clip-path: polygon(0% 0%, 50% 0%, 40% 50%, 0% 40%);
+      animation: shatter-1 1.5s ease-out 0.5s forwards;
+      opacity: 25%;
+    }
+
+    .shard:nth-child(2) {
+      clip-path: polygon(50% 0%, 100% 0%, 100% 40%, 60% 50%);
+      animation: shatter-2 1.5s ease-out 0.6s forwards;
+      opacity: 25%;
+    }
+
+    .shard:nth-child(3) {
+      clip-path: polygon(0% 40%, 40% 50%, 30% 100%, 0% 100%);
+      animation: shatter-3 1.5s ease-out 0.7s forwards;
+      opacity: 25%;
+    }
+
+    .shard:nth-child(4) {
+      clip-path: polygon(60% 50%, 100% 40%, 100% 100%, 70% 100%);
+      animation: shatter-4 1.5s ease-out 0.8s forwards;
+      opacity: 25%;
+    }
+
+    .shard:nth-child(5) {
+      /*clip-path: polygon(40% 50%, 60% 50%, 50% 100%, 30% 100%);*/
+      clip-path: polygon(40% 50%, 60% 0%, 50% 100%, 30% 100%);
+      opacity: 25%;
+      animation: shatter-5 1.5s ease-out 0.9s forwards;
+    }
+
+    .shard:nth-child(6) {
+      clip-path: polygon(40% 50%, 60% 50%, 70% 100%, 50% 100%);
+      animation: shatter-6 1.5s ease-out 1s forwards;
+      opacity: 25%;
+    }
+
+    .content {
+      position: absolute;
+      /*width: 100%;*/
+      /*height: 100%;*/
+      width: 200wv;
+      height: 30wv;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /*color: white;*/
+      color: transparent;
+      text-align: center;
+      /*opacity: 0%;*/
+      /*animation: fade-in 1s ease-out 2.5s forwards;*/
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 10px 25px 0px rgba(0, 0, 0, 0.3);
+      /*text-color: black;*/
+      /*text-color: white;*/
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      /*opacity: 0;*/
+    }
+
+    @keyframes shatter-1 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(-200px, -150px) rotate(-45deg); opacity: 0; }
+    }
+
+    @keyframes shatter-2 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(180px, -120px) rotate(35deg); opacity: 0; }
+    }
+
+    @keyframes shatter-3 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(-150px, 180px) rotate(25deg); opacity: 0; }
+    }
+
+    @keyframes shatter-4 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(200px, 150px) rotate(-30deg); opacity: 0; }
+    }
+
+    @keyframes shatter-5 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(-100px, 80px) rotate(15deg); opacity: 0; }
+    }
+
+    @keyframes shatter-6 {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(120px, -80px) rotate(-20deg); opacity: 0; }
+    }
+
+    @keyframes fade-out {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container">
+    <div class="glass-panel">
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+    </div>
+    <div class="content">
+      <div>
+        <h1>My social platforms.</h1>
+        <p>Glasplitter-animationen avslöjar innehållet</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
