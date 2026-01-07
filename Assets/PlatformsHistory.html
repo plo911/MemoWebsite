@@ -14,15 +14,19 @@
 
     body {
       font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      /*min-height: 100vh;*/
+      /*min-height: -10px;*/
+      /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
       /*background: linear-gradient(135deg, #00ffff 0%, #8600b3 100%);*/
       /*background: linear-gradient(135deg, #8600b3 0%, #00ffff 100%);*/
+      /*background: linear-gradient(135deg, white 0%, #8600b3 100%);*/
+      background: linear-gradient(135deg, #ffff66 0%, #8600b3 100%);
       /*background-image: url('');*/
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: hidden; /*just in mind makes things look weird if not hidden*/
+      /*overflow: visible;*/
     }
 
     .glass-container {
@@ -32,8 +36,10 @@
       /*height: 250px;*/
       animation: fade-out 0.5s ease-out 2s forwards;
       /*opacity: 0%;*/
-      width: 1wv;
-      height: 1wv;
+      /*width: 1vw;*/
+      /*height: 1vw;*/
+      width: cover;
+      height: cover;
     }
 
     .glass-panel {
@@ -41,7 +47,7 @@
       position: center;
       /*width: 100px;*/
       width: 100vw;
-      height: 50vw;
+      height: 45vw;
       /*background: rgba(255, 255, 255, 0.1);*/
       backdrop-filter: blur(10px);
       /*border-radius: 2px;*/
@@ -107,7 +113,8 @@
       align-items: center;
       justify-content: center;
       /*color: white;*/
-      color: transparent;
+      color: transparent; /*if changed make another text weird thing.*/
+      /*color: darkred;*/
       text-align: center;
       /*opacity: 0%;*/
       /*animation: fade-in 1s ease-out 2.5s forwards;*/
@@ -115,10 +122,14 @@
 
     .content h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      /*margin-bottom: 1rem;*/
+      /*margin-bottom: 0rem;*/
       text-shadow: 10px 25px 0px rgba(0, 0, 0, 0.3);
       /*text-color: black;*/
       /*text-color: white;*/
+      /*opacity: 100%;*/
+      /*position: absolute;*/
+      /*transform: translateY(center);*/
     }
 
     .content p {
@@ -181,10 +192,9 @@
     <div class="content">
       <div>
         <h1>My social platforms.</h1>
-        <p>Glasplitter-animationen avslöjar innehållet</p>
+        <p>...</p>
       </div>
     </div>
   </div>
 </body>
-  
 </html>
