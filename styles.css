@@ -7,7 +7,7 @@ body {
 }
 
 #Background-ImageZ {
-    background-image: url('Assets/Bilder/AnimeSkiss.png');
+    background-image: url('Assets/Bilder/Firefly anime stil, acololyps o tiden fruzit där tiden står stilla o inga folk 63088.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -101,3 +101,4 @@ button:hover {
         font-size: 14px; /* Mindre storlek för mobiler */
     }
 }
+
