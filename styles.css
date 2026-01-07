@@ -29,7 +29,8 @@ body {
     font-family: CustomFont;
     /*color: #ffa500;*/
     /*color: #00e649;*/
-    color: black;
+    /*color: black;*/
+    color: white;
     text-align: center;
     transform: translateY(1.5vh);
 }
@@ -37,7 +38,7 @@ body {
 .text2 {
     /*font-family: CustomFont2;*/
     /*color: #ee82ee;*/
-    color: #00e649;
+    /*color: #00e649;*/
     top: -100px;
     text-align: center;
     /*width: 25vw;*/
@@ -101,6 +102,7 @@ button:hover {
         font-size: 14px; /* Mindre storlek för mobiler */
     }
 }
+
 
 
 
