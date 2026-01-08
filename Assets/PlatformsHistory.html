@@ -4,56 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css.css">
-  <title>Glassplitter Animation</title>
+  <title>Glassplitter Animation med Kollisionsdetektering & Funktionella Länkar</title>
   <style>
     * {
       margin: 0;
       padding: 0;
-      /*box-sizing: border-box;*/
     }
 
     body {
       font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      /*min-height: 100vh;*/
-      /*min-height: -10px;*/
-      /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
-      /*background: linear-gradient(135deg, #00ffff 0%, #8600b3 100%);*/
-      /*background: linear-gradient(135deg, #8600b3 0%, #00ffff 100%);*/
-      /*background: linear-gradient(135deg, white 0%, #8600b3 100%);*/
       background: linear-gradient(135deg, #ffff66 0%, #8600b3 100%);
-      /*background-image: url('');*/
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; /*just in mind makes things look weird if not hidden*/
-      /*overflow: visible;*/
+      overflow: hidden;
+      position: relative;
     }
 
     .glass-container {
-      /*position: relative;*/
       position: static;
-      /*width: 400px;*/
-      /*height: 250px;*/
-      animation: fade-out 0.5s ease-out 2s forwards;
-      /*opacity: 0%;*/
-      /*width: 1vw;*/
-      /*height: 1vw;*/
       width: cover;
       height: cover;
+      animation: fade-out 0.5s ease-out 2s forwards;
     }
 
     .glass-panel {
-      /*position: absolute;*/
       position: center;
-      /*width: 100px;*/
       width: 100vw;
       height: 45vw;
-      /*background: rgba(255, 255, 255, 0.1);*/
       backdrop-filter: blur(10px);
-      /*border-radius: 2px;*/
-      /*border: 1px solid rgba(255, 255, 255, 0.2);*/
-      /*box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);*/
-      /*opacity: 0%;*/
     }
 
     .shard {
@@ -64,6 +43,7 @@
       backdrop-filter: blur(5px);
       border-radius: 2px;
       opacity: 25%;
+      z-index: 1;
     }
 
     .shard:nth-child(1) {
@@ -91,7 +71,6 @@
     }
 
     .shard:nth-child(5) {
-      /*clip-path: polygon(40% 50%, 60% 50%, 50% 100%, 30% 100%);*/
       clip-path: polygon(40% 50%, 60% 0%, 50% 100%, 30% 100%);
       opacity: 25%;
       animation: shatter-5 1.5s ease-out 0.9s forwards;
@@ -105,37 +84,253 @@
 
     .content {
       position: absolute;
-      /*width: 100%;*/
-      /*height: 100%;*/
       width: 200wv;
       height: 30wv;
       display: flex;
       align-items: center;
       justify-content: center;
-      /*color: white;*/
-      color: transparent; /*if changed make another text weird thing.*/
-      /*color: darkred;*/
+      color: transparent;
       text-align: center;
-      /*opacity: 0%;*/
-      /*animation: fade-in 1s ease-out 2.5s forwards;*/
+      z-index: 2;
     }
 
     .content h1 {
       font-size: 2.5rem;
-      /*margin-bottom: 1rem;*/
-      /*margin-bottom: 0rem;*/
       text-shadow: 10px 25px 0px rgba(0, 0, 0, 0.3);
-      /*text-color: black;*/
-      /*text-color: white;*/
-      /*opacity: 100%;*/
-      /*position: absolute;*/
-      /*transform: translateY(center);*/
     }
 
     .content p {
       font-size: 1.2rem;
       opacity: 0.9;
-      /*opacity: 0;*/
+    }
+
+    /* Sociala medier-element med FÖRBÄTTRAD KOLLISIONSDETEKTERING */
+    .social-link {
+      position: absolute;
+      animation: fade-in 1s ease-out 3s forwards;
+      opacity: 0;
+      z-index: 100;
+    }
+
+    .social-box {
+      display: flex;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      max-width: 50px;
+      max-height: 50px;
+      position: relative;
+      z-index: 100;
+    }
+
+    .social-box:hover {
+      max-width: 280px;
+      max-height: 120px;
+      padding: 16px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
+      z-index: 99999 !important;
+      position: relative !important;
+    }
+
+    .social-link:hover {
+      z-index: 99998 !important;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      margin-right: 0;
+      transition: margin-right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 24px;
+      z-index: 101;
+      position: relative;
+    }
+
+    .social-box:hover .social-icon {
+      margin-right: 16px;
+      transform: scale(1.1);
+      z-index: 100001;
+    }
+
+    .social-text {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease 0.1s, visibility 0.3s ease 0.1s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0;
+      z-index: 102;
+      position: relative;
+    }
+
+    .social-box:hover .social-text {
+      opacity: 1;
+      visibility: visible;
+      font-size: 1rem;
+      color: #333;
+      font-weight: 500;
+      white-space: normal;
+      line-height: 1.4;
+      text-align: left;
+      z-index: 100002;
+    }
+
+    .social-box:hover .social-text-description {
+      opacity: 1;
+      visibility: visible;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+      white-space: normal;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .social-text-description {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease 0.2s, visibility 0.3s ease 0.2s;
+      font-size: 0;
+      z-index: 103;
+      position: relative;
+    }
+
+    /* DYNAMISKA POSITIONER MED KOLLISIONSDETEKTERING */
+    
+    .social-perfect-world {
+      top: 33.2%;
+      left: 62.5%;
+      animation-delay: 3s;
+    }
+
+    .social-world-of-tanks {
+      top: 71.1%;
+      left: 72%;
+      animation-delay: 3.1s;
+    }
+
+    .social-minecraft {
+      top: 41.3%;
+      left: 39.8%;
+      animation-delay: 3.2s;
+    }
+
+    .social-steam {
+      top: 28.3%;
+      left: 41.8%;
+      animation-delay: 3.3s;
+    }
+
+    .social-playstation {
+      top: 15.5%;
+      left: 57.2%;
+      animation-delay: 3.4s;
+    }
+
+    .social-bloons-td6 {
+      top: 75.8%;
+      left: 43.9%;
+      animation-delay: 3.5s;
+    }
+
+    .social-warframe {
+      top: 71.6%;
+      left: 27.2%;
+      animation-delay: 3.6s;
+    }
+
+    .social-spotify {
+      top: 83.8%;
+      left: 29.9%;
+      animation-delay: 3.7s;
+    }
+
+    .social-hugging-face {
+      top: 62%;
+      left: 48.7%;
+      animation-delay: 3.8s;
+    }
+
+    .social-hoyoverse {
+      top: 64.6%;
+      left: 82.6%;
+      animation-delay: 3.9s;
+    }
+
+    .social-riot-games {
+      top: 16.7%;
+      left: 23.1%;
+      animation-delay: 4s;
+    }
+
+    .social-xbox {
+      top: 16.7%;
+      left: 80.8%;
+      animation-delay: 4.1s;
+    }
+
+    .social-nintendo {
+      top: 34.2%;
+      left: 23%;
+      animation-delay: 4.2s;
+    }
+
+    .social-github {
+      top: 37.4%;
+      left: 80.5%;
+      animation-delay: 4.3s;
+    }
+
+    .social-linkedin {
+      top: 15.7%;
+      left: 36.9%;
+      animation-delay: 4.4s;
+    }
+
+    .social-instagram {
+      top: 45.8%;
+      left: 66%;
+      animation-delay: 4.5s;
+    }
+
+    .social-facebook {
+      top: 74.4%;
+      left: 59.5%;
+      animation-delay: 4.6s;
+    }
+
+
+    /* Responsiv design */
+    @media (max-width: 768px) {
+      .content-container {
+        padding: 0 1rem;
+      }
+      
+      .content h1 {
+        font-size: 2rem;
+      }
+      
+      .content p {
+        font-size: 1rem;
+      }
+      
+      .social-box:hover {
+        max-width: 220px;
+        max-height: 100px;
+      }
     }
 
     @keyframes shatter-1 {
@@ -178,6 +373,127 @@
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
+  <script>
+    // FÖRBÄTTRAD KOLLISIONSDETEKTERING - säkerställer minstavstånd mellan objekt
+    function generatePositionsWithCollisionDetection() {
+      const positions = [];
+      const numIcons = 17;
+      const edgeMargin = 15; // % från kanten
+      const minDistance = 12; // Minsta avstånd mellan objekt i %
+      
+      for (let i = 0; i < numIcons; i++) {
+        let attempts = 0;
+        let validPosition = false;
+        let newPosition = null;
+        
+        // Försök hitta en position som inte kolliderar med befintliga
+        while (!validPosition && attempts < 100) {
+          const x = Math.random() * (100 - edgeMargin * 2) + edgeMargin;
+          const y = Math.random() * (100 - edgeMargin * 2) + edgeMargin;
+          newPosition = {
+            x: Math.round(x * 10) / 10,
+            y: Math.round(y * 10) / 10
+          };
+          
+          // Kontrollera avstånd till alla befintliga positioner
+          validPosition = true;
+          for (const existingPos of positions) {
+            const dx = newPosition.x - existingPos.x;
+            const dy = newPosition.y - existingPos.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < minDistance) {
+              validPosition = false;
+              break;
+            }
+          }
+          
+          attempts++;
+        }
+        
+        if (validPosition && newPosition) {
+          positions.push(newPosition);
+        } else {
+          // Fallback om vi inte hittar en giltig position
+          positions.push({
+            x: Math.round((Math.random() * (100 - edgeMargin * 2) + edgeMargin) * 10) / 10,
+            y: Math.round((Math.random() * (100 - edgeMargin * 2) + edgeMargin) * 10) / 10
+          });
+        }
+      }
+      
+      return positions;
+    }
+
+    // Z-Index boost funktion
+    function setupZIndexBoost() {
+      const socialBoxes = document.querySelectorAll('.social-box');
+      
+      socialBoxes.forEach(box => {
+        box.addEventListener('mouseenter', function() {
+          this.style.zIndex = '99999';
+          if (this.parentElement) {
+            this.parentElement.style.zIndex = '99998';
+          }
+        });
+        
+        box.addEventListener('mouseleave', function() {
+          this.style.zIndex = '100';
+          if (this.parentElement) {
+            this.parentElement.style.zIndex = '100';
+          }
+        });
+      });
+    }
+
+    // Applicera positioner med kollisionsdetektering och z-index boost
+    document.addEventListener('DOMContentLoaded', function() {
+      const positions = generatePositionsWithCollisionDetection();
+      const platforms = [
+        'perfect-world', 'world-of-tanks', 'minecraft', 'steam', 'playstation',
+        'bloons-td6', 'warframe', 'spotify', 'hugging-face', 'hoyoverse',
+        'riot-games', 'xbox', 'nintendo', 'github', 'linkedin', 'instagram', 'facebook'
+      ];
+
+      const urls = {
+        'perfect-world': 'https://www.arcgames.com/en/games/perfect-world',
+        'world-of-tanks': 'https://worldoftanks.eu/',
+        'minecraft': 'https://www.minecraft.net/sv-se',
+        'steam': 'https://steamcommunity.com/',
+        'playstation': 'https://www.playstation.com/sv-se/',
+        'bloons-td6': 'https://ninja.kiwi/games/bloons-td-6',
+        'warframe': 'https://www.warframe.com/',
+        'spotify': 'https://open.spotify.com/',
+        'hugging-face': 'https://huggingface.co/',
+        'hoyoverse': 'https://www.hoyoverse.com/',
+        'riot-games': 'https://www.riotgames.com/',
+        'xbox': 'https://www.xbox.com/sv-SE/',
+        'nintendo': 'https://www.nintendo.se/',
+        'github': 'https://github.com/',
+        'linkedin': 'https://www.linkedin.com/',
+        'instagram': 'https://www.instagram.com/',
+        'facebook': 'https://www.facebook.com/'
+      };
+
+      platforms.forEach((platform, index) => {
+        if (positions[index]) {
+          const element = document.querySelector(`.social-${platform}`);
+          if (element) {
+            const pos = positions[index];
+            element.style.top = pos.y + '%';
+            element.style.left = pos.x + '%';
+            element.style.animationDelay = (3 + index * 0.1) + 's';
+            
+            // Sätt funktionell länk
+            element.setAttribute('onclick', `window.open('${urls[platform]}', '_blank')`);
+          }
+        }
+      });
+      
+      // Aktivera z-index boost
+      setupZIndexBoost();
+    });
+  </script>
 </head>
 <body>
   <div class="glass-container">
@@ -192,7 +508,163 @@
     <div class="content">
       <div>
         <h1>My social platforms.</h1>
-        <p>...</p>
+        <p>Klicka på ikonerna för att besöka mina profiler!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sociala medier-element med KOLLISIONSDETEKTERING & FUNKTIONELLA LÄNKAR -->
+  
+  <div class="social-link social-perfect-world" onclick="window.open('https://www.arcgames.com/en/games/perfect-world', '_blank')" aria-label="Perfect World Games">
+    <div class="social-box">
+      <div class="social-icon">🎮</div>
+      <div>
+        <div class="social-text">Perfect World Games</div>
+        <div class="social-text-description">Spela Perfect World Games för episka äventyr</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-world-of-tanks" onclick="window.open('https://worldoftanks.eu/', '_blank')" aria-label="World of Tanks">
+    <div class="social-box">
+      <div class="social-icon">🚗</div>
+      <div>
+        <div class="social-text">World of Tanks</div>
+        <div class="social-text-description">Strid i World of Tanks - pansarstrid på sin spets</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-minecraft" onclick="window.open('https://www.minecraft.net/sv-se', '_blank')" aria-label="Minecraft">
+    <div class="social-box">
+      <div class="social-icon">⛏️</div>
+      <div>
+        <div class="social-text">Minecraft</div>
+        <div class="social-text-description">Bygg och överlev i Minecrafts blockvärld</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-steam" onclick="window.open('https://steamcommunity.com/', '_blank')" aria-label="Steam">
+    <div class="social-box">
+      <div class="social-icon">🎯</div>
+      <div>
+        <div class="social-text">Steam</div>
+        <div class="social-text-description">Utfoga mitt Steam-bibliotek för spel</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-playstation" onclick="window.open('https://www.playstation.com/sv-se/', '_blank')" aria-label="PlayStation">
+    <div class="social-box">
+      <div class="social-icon">🎮</div>
+      <div>
+        <div class="social-text">PlayStation</div>
+        <div class="social-text-description">Hitta mig på PlayStation Network</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-bloons-td6" onclick="window.open('https://ninja.kiwi/games/bloons-td-6', '_blank')" aria-label="Bloons TD6">
+    <div class="social-box">
+      <div class="social-icon">🎈</div>
+      <div>
+        <div class="social-text">Bloons TD6</div>
+        <div class="social-text-description">Spela Bloons TD6 - strategi på hög nivå</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-warframe" onclick="window.open('https://www.warframe.com/', '_blank')" aria-label="Warframe">
+    <div class="social-box">
+      <div class="social-icon">🚀</div>
+      <div>
+        <div class="social-text">Warframe</div>
+        <div class="social-text-description">Gå med i Warframe-universumet</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-spotify" onclick="window.open('https://open.spotify.com/', '_blank')" aria-label="Spotify">
+    <div class="social-box">
+      <div class="social-icon">🎵</div>
+      <div>
+        <div class="social-text">Spotify</div>
+        <div class="social-text-description">Lyssna på mina spellistor på Spotify</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-hugging-face" onclick="window.open('https://huggingface.co/', '_blank')" aria-label="Hugging Face">
+    <div class="social-box">
+      <div class="social-icon">🤗</div>
+      <div>
+        <div class="social-text">Hugging Face</div>
+        <div class="social-text-description">Utforska AI-projekt på Hugging Face</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-hoyoverse" onclick="window.open('https://www.hoyoverse.com/', '_blank')" aria-label="Hoyoverse">
+    <div class="social-box">
+      <div class="social-icon">⭐</div>
+      <div>
+        <div class="social-text">Hoyoverse</div>
+        <div class="social-text-description">Upptäck Hoyoverse-spel och världar</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-riot-games" onclick="window.open('https://www.riotgames.com/', '_blank')" aria-label="Riot Games">
+    <div class="social-box">
+      <div class="social-icon">🔥</div>
+      <div>
+        <div class="social-text">Riot Games</div>
+        <div class="social-text-description">Spela Riot Games - från LoL till Valorant</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-xbox" onclick="window.open('https://www.xbox.com/sv-SE/', '_blank')" aria-label="Xbox">
+    <div class="social-box">
+      <div class="social-icon">🎯</div>
+      <div>
+        <div class="social-text">Xbox</div>
+        <div class="social-text-description">Gaming på Xbox - min gamertag och mer</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-nintendo" onclick="window.open('https://www.nintendo.se/', '_blank')" aria-label="Nintendo">
+    <div class="social-box">
+      <div class="social-icon">🍄</div>
+      <div>
+        <div class="social-text">Nintendo</div>
+        <div class="social-text-description">Nintendo-spel och Switch-äventyr</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-github" onclick="window.open('https://github.com/', '_blank')" aria-label="GitHub">
+    <div class="social-box">
+      <div class="social-icon">💻</div>
+      <div>
+        <div class="social-text">GitHub</div>
+        <div class="social-text-description">Utforska mina projekt och bidrag på GitHub</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-linkedin" onclick="window.open('https://www.linkedin.com/', '_blank')" aria-label="LinkedIn">
+    <div class="social-box">
+      <div class="social-icon">💼</div>
+      <div>
+        <div class="social-text">LinkedIn</div>
+        <div class="social-text-description">Koppla upp med mig professionellt på LinkedIn</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-instagram" onclick="window.open('https://www.instagram.com/', '_blank')" aria-label="Instagram">
+    <div class="social-box">
+      <div class="social-icon">📸</div>
+      <div>
+        <div class="social-text">Instagram</div>
+        <div class="social-text-description">Följ min vardag och kreativa ögonblick på Instagram</div>
+      </div>
+    </div>
+  </div>
+  <div class="social-link social-facebook" onclick="window.open('https://www.facebook.com/', '_blank')" aria-label="Facebook">
+    <div class="social-box">
+      <div class="social-icon">📘</div>
+      <div>
+        <div class="social-text">Facebook</div>
+        <div class="social-text-description">Hitta mig på Facebook för mer personlig kontakt</div>
       </div>
     </div>
   </div>
